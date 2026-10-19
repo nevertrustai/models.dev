@@ -1,0 +1,8 @@
+# OpenAI-compatible Chat Completions, one endpoint per region; the default is the
+# US region. Other regions and the global endpoint (gbl.api.safeailabs.ai) are
+# listed at https://safeailabs.ai/docs/regions (accessed 2026-10-19).
+name = "Safe AI Labs"
+env = ["SAFE_AI_KEY"]
+npm = "@ai-sdk/openai-compatible"
+api = "https://us-region.api.safeailabs.ai/v1"
+doc = "https://safeailabs.ai/docs"
