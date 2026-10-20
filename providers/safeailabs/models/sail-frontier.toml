@@ -1,0 +1,34 @@
+# Safe AI Labs serves sail-frontier from the open-weight model it selects at the
+# time; the model behind the id can change without the id changing.
+# Effort: reasoning_effort or reasoning.effort = none|low|high|max (minimal, medium
+# and xhigh are also accepted); none turns reasoning off.
+# Cost and limits from GET https://us-region.api.safeailabs.ai/v1/models (accessed 2026-10-20):
+# prompt 0.0000003, cached_prompt 0.00000003, completion 0.000001 USD per token;
+# max_context_length 1048576, max_length 65536.
+name = "Sail Frontier"
+description = "Safe AI Labs' frontier open-weight model for reasoning and agentic coding"
+release_date = "2026-10-20"
+last_updated = "2026-10-20"
+attachment = true
+reasoning = true
+temperature = true
+tool_call = true
+structured_output = true
+open_weights = false
+
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "high", "max"]
+
+[cost]
+input = 0.3
+output = 1.0
+cache_read = 0.03
+
+[limit]
+context = 1_048_576
+output = 65_536
+
+[modalities]
+input = ["text", "image"]
+output = ["text"]
